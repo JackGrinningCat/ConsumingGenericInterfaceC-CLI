@@ -39,7 +39,8 @@ namespace SureImportantToProblem::ButAintNoProblemToBeLongOrLonger::EvenLevelsSh
 
 			void fireUnmanageEvent( UnmanageBarFuba barFuba)
 			{
-				
+//				auto test = this.<backing_store>DataEventHandler;
+//				auto test = DataEventHandler->GetInvocationList();
 			}
 		};
 
@@ -65,10 +66,10 @@ int main(array<System::String ^> ^args)
 
 	testTemplate->DataEventHandler += gcnew System::EventHandler<System::String ^>(&OnDataEventHandler);
 	testTemplate->fireEvent(gcnew String(L"B"));
-	testTemplate->DataEventHandler -= gcnew System::EventHandler<System::String ^>(&OnDataEventHandler); // uff working but ... jeah ;) .NET is working for me 
+	testTemplate->DataEventHandler -= gcnew System::EventHandler<System::String ^>(&OnDataEventHandler);
 	testTemplate->fireEvent(gcnew String(L"C"));
 
-
+	testTemplate->fireUnmanageEvent(L"C");
     return 0;
 }
 
